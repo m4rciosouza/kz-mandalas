@@ -10,6 +10,10 @@ bower install
 grunt serve
 ```
 
+### Live demo
+
+[Mandalas live demo](http://kazale.com/mandalas)
+
 ### License
 
 [BSD license](http://opensource.org/licenses/bsd-license.php)
