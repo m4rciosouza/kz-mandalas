@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Mandalas para colorir</title>
+    <meta name="description" content="Mandalas para colorir web, tablet, mobile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <div class="container-fluid">
+      <div class="header">
+
+        <h1 class="text-center">Mandalas para colorir!</h1>
+
+        <!-- BEGIN: HOME SCREEN -->
+        <div class="home-screen">
+          <div class="container-fluid home-screen">
+            <div class="panel panel-primary">
+              <div class="panel-heading">Selecione uma mandala para começar a pintar.</div>
+              <div class="panel-body img-mandalas"></div>
+            </div>
+          </div>
+        </div><!-- END: HOME SCREEN -->
+      
+        <!-- BEGIN: PAINTING SCREEN -->
+        <div class="painting-screen">
+          <div class="panel panel-primary">
+              <div class="panel-body">
+                <div class="col-xs-12 col-md-4 margin-5">
+                  <button class="btn btn-primary btn-home">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Início
+                  </button>
+                  Pincel: 
+                  <button class="btn btn-default btn-tool" data-tool="normal">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                  </button>
+                  <button class="btn btn-default btn-tool" data-tool="crayon">
+                    <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
+                  </button>
+                  <button class="btn btn-default btn-tool" data-tool="eraser">
+                    <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+                  </button>
+                </div>
+                <div class="col-xs-12 col-md-4 margin-5">
+                  Tam.: 
+                  <button class="btn btn-default btn-size" data-size="1">
+                    1x
+                  </button>
+                  <button class="btn btn-default btn-size" data-size="5">
+                    2x
+                  </button>
+                  <button class="btn btn-default btn-size" data-size="10">
+                    3x
+                  </button>
+                  <button class="btn btn-default btn-size" data-size="15">
+                    4x
+                  </button>
+                </div>
+                <div class="col-xs-12 col-md-12 margin-5 btn-colors">
+                  Cor: 
+                </div>
+            </div>
+          </div>
+          <canvas id="canvas" class="painting-screen"></canvas>
+        </div><!-- END: PAINTING SCREEN -->
+
+      </div>
+
+      <div class="footer">
+        <p class="text-center">
+          <a href="http://kazale.com" target="_blank">&copy; Kazale.com</a>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+        <!-- build:js(.) scripts/plugins.js -->
+        <script src="bower_components/bootstrap/js/affix.js"></script>
+        <script src="bower_components/bootstrap/js/alert.js"></script>
+        <script src="bower_components/bootstrap/js/dropdown.js"></script>
+        <script src="bower_components/bootstrap/js/tooltip.js"></script>
+        <script src="bower_components/bootstrap/js/modal.js"></script>
+        <script src="bower_components/bootstrap/js/transition.js"></script>
+        <script src="bower_components/bootstrap/js/button.js"></script>
+        <script src="bower_components/bootstrap/js/popover.js"></script>
+        <script src="bower_components/bootstrap/js/carousel.js"></script>
+        <script src="bower_components/bootstrap/js/scrollspy.js"></script>
+        <script src="bower_components/bootstrap/js/collapse.js"></script>
+        <script src="bower_components/bootstrap/js/tab.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({app,.tmp}) scripts/game.js -->
+        <script src="scripts/game.js"></script>
+        <script src="scripts/game-canvas.js"></script>
+        <script src="scripts/game-events.js"></script>
+        <script src="scripts/game-screen.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
