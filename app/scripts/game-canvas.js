@@ -6,11 +6,12 @@ var GameCanvas = {
 		this.clickX = []; // click and painting controls
 		this.clickY = [];
 		this.clickDrag = [];
+		this.clickUndo = [];
 		this.curColor = '#008000'; // colors control
 		this.clickColor = [];
 		this.clickSize = []; // sizes control
 		this.curSize = '1';
-		this.clickTool = []; // tools control
+		//this.clickTool = []; // tools control
 		this.curTool = 'normal';
 		this.crayonTextureImage = new Image();
 		this.outlineImage = new Image(); // outline image control
@@ -83,12 +84,15 @@ var GameCanvas = {
 	handleClick : function( posX, posY ) {
 		this.paint = true;
 		this.addClick( posX, posY );
+		this.clickUndo.push(1);
 		this.redraw();
 	},
 
 	handleMove : function( posX, posY ) {
 		if( this.paint ) {
 	    	this.addClick( posX, posY, true );
+	    	var clickUndoTail = this.clickUndo.length - 1;
+	    	this.clickUndo[ clickUndoTail ] ++;
 	    	this.redraw();
 	  	}
 	}

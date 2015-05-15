@@ -6,6 +6,7 @@ var GameEvents = {
 		this.addColorButtonsClick();
 		this.addSizeButtonsClick();
 		this.addToolButtonsClick();
+		this.addUndoButtonClick();
 		this.addMouseDown();
 		this.addMouseMove();
 		this.addMouseUp();
@@ -40,6 +41,23 @@ var GameEvents = {
 			$( '.btn-tool' ).removeClass( 'btn-primary' );
 			GameCanvas.curTool = $( this ).attr( 'data-tool' );
 			$( this ).addClass( 'btn-primary' );
+		});
+	},
+
+	addUndoButtonClick : function() {
+		$( '.btn-tool' ).removeClass( 'btn-primary' ).first().addClass( 'btn-primary' );
+		$( '.btn-undo' ).click( function() {
+			$( '.btn-tool' ).removeClass( 'btn-primary' );
+			$( this ).addClass( 'btn-primary' );
+			if( GameCanvas.clickUndo.length > 0 ) {
+				var qtyToRemove = GameCanvas.clickUndo.pop();
+				GameCanvas.clickX.splice( qtyToRemove * -1, qtyToRemove );
+				GameCanvas.clickY.splice( qtyToRemove * -1, qtyToRemove );
+				GameCanvas.clickDrag.splice( qtyToRemove * -1, qtyToRemove );
+				GameCanvas.clickColor.splice( qtyToRemove * -1, qtyToRemove );
+				GameCanvas.clickSize.splice( qtyToRemove * -1, qtyToRemove );
+				GameCanvas.redraw();
+			}
 		});
 	},
 
