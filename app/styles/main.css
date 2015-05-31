@@ -5,10 +5,20 @@
   padding: 0.2em 0;
 }
 
+@font-face {
+    font-family: true-crimes;
+    src: url(True-Crimes/true-crimes.ttf);
+}
+
 /* Space out content a bit */
 body {
   padding-bottom: 20px;
   background-color: #EFEFEF;
+  font-family: true-crimes;
+}
+
+h1 {
+	font-family: true-crimes;
 }
 
 /* Custom page footer */
@@ -35,5 +45,5 @@ img {
 	margin-top: 5px;
 }
 .btn-border-sel {
-	border: 5px solid #337ab7;
+	border: 1px solid #337ab7;
 }
